@@ -359,7 +359,7 @@ async def cmd_board(message: Message):
         await message.answer(render_board(game) + "\n\n" + render_letters(game))
 
 
-@router.message(Command("stop", "сдаюсь"))
+@router.message(Command("stop"))
 async def cmd_stop(message: Message):
     game = games.get(message.chat.id)
     if not game or game.finished:
