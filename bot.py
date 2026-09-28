@@ -850,8 +850,8 @@ async def main() -> None:
     dp.include_router(router)
     dp.errors.register(on_error)
 
-    log.info("Слов: %s · цитат: %s · дней в архиве: %s · карт Таро: %s",
-             len(SECRET_WORDS), len(QUOTES), len(ARCHIVE), len(TAROT))
+    log.info("Слов: %s · вопросов: %s · данеток: %s · эмодзи: %s · словарь: %s",
+             len(SECRET_WORDS), len(QUIZ), len(SITUATIONS), len(EMOJI), len(NOUNS))
     log.info("Разрешённые чаты: %s", ALLOWED_CHATS or "(пока все — задайте ALLOWED_CHATS)")
     asyncio.create_task(scheduler(bot))
     await dp.start_polling(bot)
